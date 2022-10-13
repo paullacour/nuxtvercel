@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/vercel-builder"
+    },
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/api/validate-vat", "dest": "api/validate-vat.js" },
+    { "src": "/api/mailchimp-signup", "dest": "api/mailchimp-signup.js" },
+    { "src": "/(.*)", "dest": "$1" }
+  ]
+}
